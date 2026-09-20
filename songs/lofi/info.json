@@ -1,5 +1,15 @@
 {
     "title": "Lofi Sleep",
     "description": "Peaceful beats for sleep",
-    "cover": "assets/cover8.jpg"
+    "cover": "assets/cover8.jpg",
+    "songs":[
+        "Baton Ko Teri - Lofi.mp3",
+        "Fakira - Lofi.mp3",
+        "Falak Tak Chal - Lofi.mp3",
+        "Kabhi Jo Badal - Lofi.mp3",
+        "Kabira - Lofi.mp3",
+        "Let Me x Main Dhoondne - Lofi.mp3",
+        "Pal Pal - Lofi.mp3",
+        "Sun Sathiya - Lofi.mp3"
+    ]
 }

@@ -1,5 +1,17 @@
 {
     "title": "Angry Mood",
     "description": "Release the anger",
-    "cover": "assets/cover9.jpg"
+    "cover": "assets/cover9.jpg",
+    "songs": [
+        "Apna Time Ayega - Gully Boy.mp3",
+        "Arjan Vailly - Bhupinder B, Manan B.mp3",
+        "Bhaag DK Bose - Ram Sampath.mp3",
+        "Brothers Anthem - Vishal Dadlani.mp3",
+        "Do Numberi - Dhanda Nyoliwala",
+        "Jee Karda - Divya Kumar",
+        "Kar Har Maidan Fateh - Shreya, Sukhwinder.mp3",
+        "Malhari - Vishal Dadlani.mp3",
+        "Sultan - Sukhwinder Singh, Shadab Faridi.mp3",
+        "Zinda - Siddhart Mahadevan.mp3"
+    ]
 }

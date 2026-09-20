@@ -1,5 +1,17 @@
 {
     "title": "Sad Songs",
     "description": "For emotional moments",
-    "cover": "assets/cover12.jpg"
+    "cover": "assets/cover12.jpg",
+    "songs":[
+        "Ae Dil Hai Mushkil - Arijit Singh.mp3",
+        "Banjaare - Sumit, Anuj.mp3",
+        "Bekhyali - Arijit Singh.mp3",
+        "Hamari Adhuri Kahani - Arijit Sing.mp3",
+        "Mann Bharrya - B Praak.mp3",
+        "Marke - Jass Manak.mp3",
+        "O Bedardya - Arijit Singh.mp3",
+        "Phir Bhi Tumko - Arijit Singh.mp3",
+        "Ranjhan - Parampara Tondon.mp3",
+        "Tum Hi Ana - Jubin Nautiyal.mp3"
+    ]
 }

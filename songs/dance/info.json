@@ -1,5 +1,17 @@
 {
     "title": "Dance",
     "description": "Feel the rhythm",
-    "cover": "assets/cover13.jpg"
+    "cover": "assets/cover13.jpg",
+    "songs":[
+        "Aj Ki Rat - Madhubanti, Divya.mp3",
+        "Chittiyaan Kalaiyaan - Kanika Kapoor.mp3",
+        "Dilbar - Neha, Dhvani, Ikka.mp3",
+        "Kala Chashma - Amar, Badshah, Neha.mp3",
+        "Kusu Kusu - Zahrah Khan, Dev Negi.mp3",
+        "Laal Pari - Honey Singh, Simar Kaur.mp3",
+        "Laila Main Laila - Pawni A Pandey.mp3",
+        "Nachange Sari Rat - Meet, Neeraj, Tulsi.mp3",
+        "Saki Saki - Neha, Tulsi, B Praak.mp3",
+        "Shrarat - Madhubanti.mp3"
+    ]
 }

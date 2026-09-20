@@ -1,5 +1,17 @@
 {
     "title": "Coke Studio",
     "description": "Soulful Pakistani sounds",
-    "cover": "assets/cover6.png"
+    "cover": "assets/cover6.png",
+    "songs": [
+        "Afreen Afreen - Rahat Fateh Ali x Momina.mp3",
+        "Blockbuster - Faris x Umair x Gharwi Group.mp3",
+        "Faasle - Kaavish x Qurtulain Balouch.mp3",
+        "Jhol - Maanu x Annural.mp3",
+        "Paar Channa De - Shilpa Rao & Noori.mp3",
+        "Pasoori - Ali Sethi x Shae Gill.mp3",
+        "Piya Ghar Aya - Abu M. Qawwal & Brothers.mp3",
+        "Sammi Meri Waar - Umair x Qurtulain.mp3",
+        "Tajdare Haram - Atif Aslam.mp3",
+        "Tu Jhoom - Naseebo x Abida.mp3"
+    ]
 }

@@ -1,5 +1,19 @@
 {
     "title": "Punjabi Vibes",
     "description": "Ammy Virk, Diljit, Cheema y, Shubh",
-    "cover": "assets/cover3.jpg"
+    "cover": "assets/cover3.jpg",
+    "songs":[
+        "Sun Sathiya - Lofi.mp3",
+        "California Love - Cheema Y.mp3",
+        "Cheques - Shubh.mp3",
+        "Dabde Ni - Ammy Virk.mp3",
+        "Dealer - Diljit Dosanjh.mp3",
+        "G.O.A.T - Diljit Dosanjh.mp3",
+        "Jackpot - Cheema Y.mp3",
+        "Khabbi Seat - Ammy Virk.mp3",
+        "Opps - Ammy Virk.mp3",
+        "Supreme - Shubh.mp3",
+        "Trump - Cheema Y.mp3",
+        "We Rollin - Shubh.mp3"
+    ]
 }

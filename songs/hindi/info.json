@@ -1,5 +1,19 @@
 {
     "title": "Hindi Hits",
     "description": "Melody & emotions",
-    "cover": "assets/cover2.webp"
+    "cover": "assets/cover2.webp",
+    "songs":[
+        "Chahun Main Ya Na - Arijit, Palak.mp3",
+        "Dil Diyan Gallan - Atif Aslam.mp3",
+        "Hasi Ban Gye - Ami Mishra, Mohit Suri.mp3",
+        "Jeene Laga Hoon - Atif Aslam.mp3",
+        "Pehli Dafa - Atif Aslam.mp3",
+        "Saiyaara - Faheem Abdullah.mp3",
+        "Sanson Ko - Arijit Singh.mp3",
+        "Tera Hone Laga Hoon - Atif Aslam.mp3",
+        "Tu Jane Na - Atif Aslam.mp3",
+        "Tum Hi Ho - Arijit Singh.mp3",
+        "Ye Tune Kya Kiya - Javed Bashir.mp3",
+        "Zara Zara - Jalraj Rhtdm.mp3"
+    ]
 }

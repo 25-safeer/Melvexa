@@ -1,5 +1,16 @@
 {
     "title": "Romantic Melodies",
     "description": "Songs full of love",
-    "cover": "assets/cover11.jpg"
+    "cover": "assets/cover11.jpg",
+    "songs":[
+        "Agar Tum Sath Ho - Alka, Arijit.mp3",
+        "Aj Phir Tum Py - Arijit Singh.mp3",
+        "Enna Sohna - Arijit Singh.mp3",
+        "Ishq Mubarak - Arijit Singh.mp3",
+        "Janam - Vishal Mishra.mp3",
+        "Jo Tum Mere Ho - Anuv Jain.mp3",
+        "Phele Bhi Main - Vishal Mishra.mp3",
+        "Teri Meri Kahani - Arijit Singh, Palak.mp3",
+        "Tujhe Kitna Chahny Lage - Arijit Singh.mp3"
+    ]
 }

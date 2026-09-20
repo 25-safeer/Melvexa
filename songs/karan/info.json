@@ -1,5 +1,19 @@
 {
     "title": "Karan Aujla",
     "description": "Aujla's best vibes",
-    "cover": "assets/cover10.jpg"
+    "cover": "assets/cover10.jpg",
+    "songs":[
+        "5-7 - Karan Aujla.mp3",
+        "At Peace - Karan Aujla.mp3",
+        "Bachke Bachke - Karan Aujla.mp3",
+        "Boyfriend - Karan Aujla.mp3",
+        "For a Reason - Karan Aujla.mp3",
+        "Goin Off - Karan Aujla.mp3",
+        "Low Fade - Karan Aujla.mp3",
+        "Mexico Koka - Karan Aujla.mp3",
+        "On Top - Karan Aujla.mp3",
+        "Softly - Karan Aujla.mp3",
+        "Take It Easy - Karan Aujla.mp3",
+        "Wavy - Karan Aujla.mp3"
+    ]
 }

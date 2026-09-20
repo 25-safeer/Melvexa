@@ -1,5 +1,22 @@
 {
     "title": "Mithri Saraiki",
     "description": "Sweet Saraiki melodies",
-    "cover": "assets/cover14.jpg"
+    "cover": "assets/cover14.jpg",
+    "songs":[
+        "Asan Nokar Janab Dy - Zeeshan Rokhri.mp3",
+        "Asan Yar Mawali - Tanveer Anjum.mp3",
+        "Banda Banda Gharzan Da - Mujahid Mansoor.mp3",
+        "Chalray Chalray - Shafaullah Rokhri.mp3",
+        "Chana Tera Shukria - Tanveer Anjum.mp3",
+        "Dhola Sanu Chorya - Ali Haider LoneWala.mp3",
+        "Hik Dien Hosi - Mujahid Mansoor Malangi.mp3",
+        "Ik Phul Motiye da - Mansoor Malangi.mp3",
+        "Ishq Pinaya hey - Basit Naeemi.mp3",
+        "Judai - Zeeshan Rokhri.mp3",
+        "Mahi Vasey Mera - Ataullah Esakhelvi.mp3",
+        "Main Keda Majboor - Shafaullah & Zeeshan.mp3",
+        "Main Phullan Di Saij - Nooran G.mp3",
+        "Nawan Nawan Beli - Wajid Ali Baghdadi.mp3",
+        "Ranjheya Ve - Zain Zohaib.mp3"
+    ]
 }

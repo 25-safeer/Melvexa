@@ -20,64 +20,55 @@ function secondsToMinutesSeconds(seconds) {
 }
 
 async function getSongs(folder) {
-    currFolder = folder
-    let a = await fetch(`http://127.0.0.1:3000/${folder}/`)
+    currFolder = folder;
 
-    let response = await a.text()
-    let div = document.createElement("div")
-    div.innerHTML = response
+    let a = await fetch(`/${folder}/info.json`);
+    let response = await a.json();
 
-    let as = div.getElementsByTagName("a")
+    songs = response.songs;
 
-    songs = []
+    let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0];
 
-    for (let index = 0; index < as.length; index++) {
-        const element = as[index];
+    songUL.innerHTML = "";
 
-        if (element.getAttribute("href").endsWith(".mp3")) {
-
-            let songname = decodeURIComponent(
-                element.getAttribute("href")
-            ).replaceAll("\\", "/");
-
-            songs.push(songname.split(`/${folder}/`)[1]);
-        }
-    }
-
-    let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0]
-    songUL.innerHTML = ""
     for (const song of songs) {
         songUL.innerHTML = songUL.innerHTML + `<li>
-                        <img class="invert" src="img/music.svg" alt="music">
-                        <div class="info">
-                            <div>${decodeURIComponent(song)}</div>
-                        </div>
-                        <div class="playnow">
-                            <span>Play Now</span>
-                            <img class="invert" src="img/play.svg" alt="">
-                        </div>
-                       </li>`
+            <img class="invert" src="img/music.svg" alt="music">
+
+            <div class="info">
+                <div>${decodeURIComponent(song)}</div>
+            </div>
+
+            <div class="playnow">
+                <span>Play Now</span>
+                <img class="invert" src="img/play.svg" alt="">
+            </div>
+        </li>`;
     }
 
+    Array.from(
+        document.querySelector(".songList").getElementsByTagName("li")
+    ).forEach(e => {
+        e.addEventListener("click", () => {
+            playmusic(
+                e.querySelector(".info").firstElementChild.innerHTML
+            );
+        });
+    });
 
-    Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(e => {
-        e.addEventListener("click", element => {
-            playmusic(e.querySelector(".info").firstElementChild.innerHTML)
-        })
-    })
-
-    return songs
+    return songs;
 }
 
 const playmusic = (track, pause = false) => {
-    currentSong.src = `/${currFolder}/` + track
-    if (!pause) {
-        currentSong.play()
-        play.src = "img/pause.svg"
-    }
-    document.querySelector(".songinfo").innerHTML = decodeURI(track)
-    document.querySelector(".songduration").innerHTML = "00:00 / 00:00"
+    currentSong.src = `/${currFolder}/${encodeURIComponent(track)}`;
 
+    if (!pause) {
+        currentSong.play();
+        play.src = "img/pause.svg";
+    }
+
+    document.querySelector(".songinfo").innerHTML = decodeURIComponent(track);
+    document.querySelector(".songduration").innerHTML = "00:00 / 00:00";
 }
 
 const seekbar = document.querySelector(".seekbar");
@@ -85,46 +76,64 @@ const circle = document.querySelector(".circle");
 
 
 async function displayAlbums() {
-    let a = await fetch(`http://127.0.0.1:3000/songs/`)
-    let response = await a.text()
-    let div = document.createElement("div")
-    div.innerHTML = response
 
-    let cardContainer = document.querySelector(".cards")
+    const playlists = [
+        "angry",
+        "cokestudio",
+        "dance",
+        "hindi",
+        "karan",
+        "lofi",
+        "punjabi",
+        "romantic",
+        "sad",
+        "saraiki",
+        "sidhu",
+        "sufi"
+    ];
 
-    let anchors = div.getElementsByTagName("a")
-    let array = Array.from(anchors)
-    console.log(array)
+    let cardContainer = document.querySelector(".cards");
 
-    for (let index = 0; index < array.length; index++) {
-        const e = array[index];
-        let href = decodeURIComponent(e.getAttribute("href")).replaceAll("\\", "/")
-        if (!href.endsWith("/")) {
-            continue
-        }
-        let folder = href.split("/").slice(-2)[0]
-        console.log(folder)
-        if (!folder || folder === "..") {
-            continue
-        }
-        let a = await fetch(`http://127.0.0.1:3000/songs/${folder}/info.json`)
-        let response = await a.json()
-        cardContainer.innerHTML = cardContainer.innerHTML + `<div data-folder="${folder}" id="card" class="card">
-                        <img class="play" src="assets/Play.png" alt="play">
-                        <img class="coverImg" src="${response.cover}" alt="Cover Image">
-                        <h3>${response.title}</h3>
-                        <p>${response.description}</p>
-                    </div>`
+    cardContainer.innerHTML = "";
+
+    for (const folder of playlists) {
+
+        let a = await fetch(`/songs/${folder}/info.json`);
+        let response = await a.json();
+
+        cardContainer.innerHTML += `
+            <div data-folder="${folder}" id="card" class="card">
+
+                <img class="play" src="assets/Play.png" alt="play">
+
+                <img class="coverImg" 
+                     src="${response.cover}" 
+                     alt="Cover Image">
+
+                <h3>${response.title}</h3>
+
+                <p>${response.description}</p>
+
+            </div>
+        `;
     }
 
     Array.from(document.getElementsByClassName("card")).forEach(e => {
-        e.addEventListener("click", async item => {
-            console.log(item.currentTarget.dataset.folder)
-            songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`)
-            playmusic(songs[0])
-        })
-    })
-   
+
+        e.addEventListener("click", async () => {
+
+            console.log(e.dataset.folder);
+
+            songs = await getSongs(
+                `songs/${e.dataset.folder}`
+            );
+
+            if (songs.length > 0) {
+                playmusic(songs[0]);
+            }
+        });
+
+    });
 }
 
 async function main() {
@@ -256,7 +265,7 @@ async function main() {
     })
     Array.from(document.getElementsByClassName("card")).forEach(e => {
         e.addEventListener("click", () => {
-             document.querySelector(".left").style.left = "0%"
+            document.querySelector(".left").style.left = "0%"
         })
     })
     document.addEventListener("keydown", (event) => {
@@ -269,32 +278,32 @@ async function main() {
     document.querySelector(".volume").getElementsByTagName("input")[0].addEventListener("change", (e) => {
         currentSong.volume = parseInt(e.target.value) / 100
         let img = document.querySelector(".volume>img")
-        if(img.src.includes("img/mute.svg")){
+        if (img.src.includes("img/mute.svg")) {
             img.src = img.src.replace("img/mute.svg", "img/volume.svg")
         }
-        if(currentSong.volume == 0){
+        if (currentSong.volume == 0) {
             img.src = img.src.replace("img/volume.svg", "img/mute.svg")
         }
     })
 
-    document.querySelector(".volume>img").addEventListener("click", e=>{
-        
-        if(e.target.src.includes("img/volume.svg")){
+    document.querySelector(".volume>img").addEventListener("click", e => {
+
+        if (e.target.src.includes("img/volume.svg")) {
             e.target.src = e.target.src.replace("img/volume.svg", "img/mute.svg")
             currentSong.volume = 0
             document.querySelector(".volume").getElementsByTagName("input")[0].value = 0
         }
-        else{
+        else {
             e.target.src = e.target.src.replace("img/mute.svg", "img/volume.svg")
             currentSong.volume = 0.3
             document.querySelector(".volume").getElementsByTagName("input")[0].value = 30
         }
     })
-    document.getElementById("range").addEventListener("change", e=>{
-        
+    document.getElementById("range").addEventListener("change", e => {
+
     })
-     
-    
+
+
 }
 
 main()

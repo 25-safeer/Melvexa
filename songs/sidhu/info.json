@@ -1,5 +1,17 @@
 {
     "title": "Sidhu Moose Wala",
     "description": "Bold beats & lyrics",
-    "cover": "assets/cover7.jpg"
+    "cover": "assets/cover7.jpg",
+    "songs":[
+        "295 - Sidhu Moose Wala.mp3",
+        "Barota - Sidhu Moose Wala.mp3",
+        "Devil - Sidhu Moose Wala.mp3",
+        "Dollar - Sidhu Moose Wala.mp3",
+        "GOAT - Sidhu Moose Wala.mp3",
+        "Legend - Sidhu Moose Wala.mp3",
+        "Old Sakool - Sidhu Moose Wala.mp3",
+        "Same Beef - Sidhu Moose Wala.mp3",
+        "So High - Sidhu Moose Wala.mp3",
+        "The Last Ride - Sidhu Moose Wala.mp3"
+    ]
 }

@@ -1,5 +1,19 @@
 {
     "title": "Sufi Collection",
     "description": "Music for the soul",
-    "cover": "assets/cover1.webp"
+    "cover": "assets/cover1.webp",
+    "songs":[
+        "Amde Mustafa - Rahat Fateh Ali.mp3",
+        "Hai Kahan Ka Irada - Nusrat Fateh Ali.mp3",
+        "Jaanay Iss Dil - Hadiqa Kiani.mp3",
+        "Jay Hukam Dy Sardar - Sundas Batool.mp3",
+        "Oh Sahib - Zain Zohaib.mp3",
+        "Saadgi to Humari - Akanksha.mp3",
+        "Sari Dunya - Sajjad Solangi.mp3",
+        "Shabbir Ki Jan Ali Akbar - Arif Feroz.mp3",
+        "Shah e Mardan Ali - Nusrat Fateh Ali.mp3",
+        "Shahi Chad Ke - Arif Feroz.mp3",
+        "Unke Andze Karam - Nusrat Fateh Ali.mp3",
+        "Vigar Gae Ay - Nusrat Fateh Ali.mp3"
+    ]
 }
