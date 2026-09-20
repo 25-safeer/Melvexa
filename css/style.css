@@ -19,7 +19,6 @@ body {
 }
 
 .main {
-
     background-color: black;
     color: white;
 }
@@ -65,7 +64,7 @@ body {
     border: none;
     outline: none;
     background: transparent;
-  color: white;
+    color: white;
 }
 .home ul li input::placeholder{
     color: white;
