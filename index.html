@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MELVEXA - FEEL THE MUSIC</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utility.css">
+</head>
+
+<body>
+    <div class="main flex ">
+        <div class="left ">
+            <img class="invert close" src="img/close.svg" alt="close">
+            <div class="home rounded bg-grey m-1 p-1">
+                <img class="logo" width="130" src="assets/Logo.jfif" alt="Logo">
+                <ul>
+                    <li><img width="20" class="invert " src="img/home.svg" alt="home">Home</li>
+                    <li><img width="20" class="invert " src="img/search.svg" alt="search"><input type="text" placeholder="Search">
+                    </li>
+                </ul>
+
+            </div>
+            <div class="library m-1 rounded bg-grey p-1">
+                <div class="libraryhead">
+                    <div class="heading">
+                        <img width="20" class="invert" src="img/playlist.svg" alt="playlist">
+                        <h2>Your Library</h2>
+
+                    </div>
+                    <img class="invert" src="img/add.svg" alt="add playlist">
+                </div>
+                <div class="songList">
+                    <ul>
+
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <div><a href="#"><span>Legal</span></a></div>
+                    <div><a href="#"><span>Privacy Center</span></a></div>
+                    <div><a href="#"><span>Privacy Policy</span></a></div>
+                    <div><a href="#"><span>Cookies</span></a></div>
+                    <div><a href="#"><span>About Ads</span></a></div>
+                    <div><a href="#"><span>Accessibility</span></a></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="right">
+            <header class="header">
+                <div class="hamburgerflex">
+
+                    <img class="hamburger invert" src="img/hamburger.svg" alt="hamburger">
+                    <div class="left-right-btns">
+                        <img class="invert" src="img/left.svg" alt="left">
+                        <img class="invert" src="img/right.svg" alt="right">
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="signup">Sign up</button>
+                    <button class="login">Log in</button>
+                </div>
+            </header>
+            <div class="header2">
+                <h2>Melvexa Playlists</h2>
+                <button>Show all</button>
+            </div>
+            <div class="mainplaylist bg-grey">
+                <div class="cards">
+                 
+                   
+                </div>
+
+
+
+                <div class="playbar">
+                    <div class="innerplaybar">
+                        <div class="songinfo"></div>
+                        <div class="songbuttons">
+                            <img id="previous" class="invert" src="img/prev.svg" alt="previous song">
+                            <img id="play" class="invert" src="img/play.svg" alt="play song">
+                            <img id="next" class="invert" src="img/next.svg" alt="next song">
+                        </div>
+                        <div class="timevol">
+                            <div class="songduration"></div>
+                            <div class="volume">
+                                <img class="invert" src="img/volume.svg" alt="volume">
+                                <div class="range">
+                                    <input type="range" name="volume" id="range">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="seekbar">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
