@@ -2,6 +2,7 @@
 
 console.log("Lets write javascript")
 let currentSong = new Audio;
+currentSong.preload = "auto";
 let songs;
 let isDragging = false;
 let currFolder;
@@ -60,13 +61,18 @@ async function getSongs(folder) {
 }
 
 const playmusic = (track, pause = false) => {
+    currentSong.pause();
     currentSong.src = `/${currFolder}/${encodeURIComponent(track)}`;
-
+    currentSong.load();
     if (!pause) {
-        currentSong.play();
-        play.src = "img/pause.svg";
+        currentSong.play()
+            .then(() => {
+                play.src = "img/pause.svg";
+            })
+            .catch(error => {
+                console.log("Audio play error:", error);
+            });
     }
-
     document.querySelector(".songinfo").innerHTML = decodeURIComponent(track);
     document.querySelector(".songduration").innerHTML = "00:00 / 00:00";
 }
