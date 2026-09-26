@@ -93,21 +93,31 @@ async function displayAlbums() {
     ];
 
     let cardContainer = document.querySelector(".cards");
-
     cardContainer.innerHTML = "";
 
-    for (const folder of playlists) {
+    const requests = playlists.map(folder =>
+        fetch(`/songs/${folder}/info.json`)
+            .then(response => response.json())
+            .then(data => ({
+                folder: folder,
+                data: data
+            }))
+    );
 
-        let a = await fetch(`/songs/${folder}/info.json`);
-        let response = await a.json();
+    const results = await Promise.all(requests);
+
+    for (const item of results) {
+
+        const folder = item.folder;
+        const response = item.data;
 
         cardContainer.innerHTML += `
             <div data-folder="${folder}" id="card" class="card">
 
                 <img class="play" src="assets/Play.png" alt="play">
 
-                <img class="coverImg" 
-                     src="${response.cover}" 
+                <img class="coverImg"
+                     src="${response.cover}"
                      alt="Cover Image">
 
                 <h3>${response.title}</h3>
@@ -122,8 +132,6 @@ async function displayAlbums() {
 
         e.addEventListener("click", async () => {
 
-            console.log(e.dataset.folder);
-
             songs = await getSongs(
                 `songs/${e.dataset.folder}`
             );
@@ -131,6 +139,7 @@ async function displayAlbums() {
             if (songs.length > 0) {
                 playmusic(songs[0]);
             }
+
         });
 
     });
@@ -140,7 +149,7 @@ async function main() {
     await getSongs("songs/hindi")
     playmusic(songs[0], true)
 
-    displayAlbums()
+    displayAlbums();
 
 
     document.getElementById("play").addEventListener("click", () => {
