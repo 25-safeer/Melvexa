@@ -81,22 +81,28 @@ function preloadNextSong() {
 }
 const playmusic = (track, pause = false) => {
     currentSong.pause();
+
     currentSong.src = `/${currFolder}/${encodeURIComponent(track)}`;
     currentSong.load();
+
+    document.querySelector(".songinfo").innerHTML =
+        decodeURIComponent(track);
+
+    document.querySelector(".songduration").innerHTML =
+        "00:00 / 00:00";
+
     if (!pause) {
+        play.src = "img/pause.svg";   // change immediately
+
         currentSong.play()
-            .then(() => {
-                play.src = "img/pause.svg";
-            })
             .catch(error => {
                 console.log("Audio play error:", error);
+                play.src = "img/play.svg"; // revert if playback fails
             });
+    } else {
+        play.src = "img/play.svg";
     }
-    document.querySelector(".songinfo").innerHTML = decodeURIComponent(track);
-    document.querySelector(".songduration").innerHTML = "00:00 / 00:00";
-    
-    // preloadNextSong();
-}
+};
 
 const seekbar = document.querySelector(".seekbar");
 const circle = document.querySelector(".circle");
