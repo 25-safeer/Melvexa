@@ -3,6 +3,10 @@
 console.log("Lets write javascript")
 let currentSong = new Audio;
 currentSong.preload = "auto";
+
+let preloadedSong = new Audio();
+preloadedSong.preload = "auto";
+
 let songs;
 let isDragging = false;
 let currFolder;
@@ -59,7 +63,22 @@ async function getSongs(folder) {
 
     return songs;
 }
+function preloadNextSong() {
+    const currentTrack = decodeURIComponent(
+        currentSong.src.split("/").pop()
+    );
 
+    const index = songs.indexOf(currentTrack);
+
+    if (index !== -1 && index + 1 < songs.length) {
+        const nextTrack = songs[index + 1];
+
+        preloadedSong.src =
+            `/${currFolder}/${encodeURIComponent(nextTrack)}`;
+
+        preloadedSong.load();
+    }
+}
 const playmusic = (track, pause = false) => {
     currentSong.pause();
     currentSong.src = `/${currFolder}/${encodeURIComponent(track)}`;
@@ -75,6 +94,8 @@ const playmusic = (track, pause = false) => {
     }
     document.querySelector(".songinfo").innerHTML = decodeURIComponent(track);
     document.querySelector(".songduration").innerHTML = "00:00 / 00:00";
+    
+    preloadNextSong();
 }
 
 const seekbar = document.querySelector(".seekbar");
