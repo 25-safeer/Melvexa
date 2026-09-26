@@ -95,7 +95,7 @@ const playmusic = (track, pause = false) => {
     document.querySelector(".songinfo").innerHTML = decodeURIComponent(track);
     document.querySelector(".songduration").innerHTML = "00:00 / 00:00";
     
-    preloadNextSong();
+    // preloadNextSong();
 }
 
 const seekbar = document.querySelector(".seekbar");
