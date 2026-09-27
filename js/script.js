@@ -179,7 +179,7 @@ async function displayAlbums() {
 }
 
 async function main() {
-    await getSongs("songs/hindi")
+    await getSongs("songs/angry")
     playmusic(songs[0], true)
 
     displayAlbums();
